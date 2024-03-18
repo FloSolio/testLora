@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  lora-test1-debug:
+    build:
+      context: .
+      dockerfile: Dockerfile.debug
+    image: ${LOCAL_REGISTRY}:5002/lora-test1-debug:${TAG}
+    ports:
+      - 2230:2230
+
+  lora-test1:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ${DOCKER_LOGIN}/lora-test1:${TAG}
